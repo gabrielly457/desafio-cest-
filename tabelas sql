@@ -1,0 +1,38 @@
+CREATE DATABASE cest_relacao;
+
+USE cest_relacao;
+
+CREATE TABLE tb_setor(
+    id BIGINT AUTO_INCREMENT,
+	nome VARCHAR(255) NOT NULL,
+	situacao VARCHAR (255) NOT NULL,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE tb_usuario(
+    id BIGINT AUTO_INCREMENT,
+	nome VARCHAR(255) NOT NULL,
+	email  VARCHAR (255) NOT NULL,
+    perfil VARCHAR (255) NOT NULL,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE tb_categoriamanutencao(
+    id BIGINT AUTO_INCREMENT,
+	nome VARCHAR(255) NOT NULL,
+	situacao  VARCHAR (255) NOT NULL,
+	descricao VARCHAR (255) NOT NULL,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE tb_solicitacaodemanutencao(
+    id BIGINT AUTO_INCREMENT,
+	protocolo VARCHAR(255) NOT NULL,
+	título  VARCHAR (255) NOT NULL,
+	descricao VARCHAR (255) NOT NULL,
+    prioridade VARCHAR (255) NOT NULL,
+	statu  VARCHAR (255) NOT NULL,
+	datas int NOT NULL,
+    PRIMARY KEY (id)
+);
+
