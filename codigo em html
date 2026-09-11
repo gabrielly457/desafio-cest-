@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="visual.css">
+
+    <title>Document</title>
+</head>
+<body>
+
+<form action="/pagina-processa-dados-do-form" method="post">
+  <div>
+    <label for="textarea">protocolo:</label>
+    <input type="text" id="protocolo" /></textarea>
+  </div>
+ </div>
+  <div>
+    <label for="textarea">descricao do problema:</label>
+    <input type="text" id="descricao" /></textarea>
+  </div>
+  <div>    
+    <label for="text">prioridade:</label>
+     <button type="submit">baixo</button>
+      <button type="submit">medio</button>
+       <button type="submit">alto </button>
+        <button type="submit">critica</button>
+  </div>
+  
+  <div>
+    <label for="textarea">status:</label>
+       <em> Acompanhe o seu prgresso logo voce sera atendido (a). </em>
+       <progress value="70" max="100">70 %</progress>
+  </div>
+
+  <div class="button">
+    <button type="submit">Enviar sua mensagem</button>
+
+
+  </div>
+</form>
+
+<script>
+        document.getElementById('carregar').addEventListener('click', async () => {
+            try {
+                // Faz a requisição para o seu back-end
+                const resposta = await fetch('c:\Users\lab04-15\Downloads\desafio_cest\tabelas.sql');
+                const dados = await resposta.json();
+                
+                // Mostra o resultado na tela
+                document.getElementById('resultado').innerText = dados.mensagem;
+            } catch (erro) {
+                console.error('Erro ao buscar dados:', erro);
+            }
+        });
+    </script>
+
+</body>
+</html>
